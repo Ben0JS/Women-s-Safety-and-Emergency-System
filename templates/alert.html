@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Alert System</title>
+  <link rel="stylesheet" href="/static/css/alert.css">
+</head>
+<body>
+  <div class="alert-container">
+    <h1>🚨 Emergency Alert System</h1>
+    <p>If you are in danger, press the red button below to send an alert or trigger a fake call.</p>
+
+    <!-- 🚨 Alert Button -->
+    <button id="alert-btn">🚨 Send Emergency Alert</button>
+
+    <!-- 📞 Fake Call Button -->
+    <a href="/templates/fake-call.html">
+      <button id="fake-call-btn">📞 Trigger Fake Call</button>
+    </a>
+
+    <!-- Status Message -->
+    <p id="status-message" style="min-height: 100px;"></p>
+  </div>
+
+
+  <p class="back-link"><a href="/templates/index.html">← Back to Home</a></p>
+
+<script src="/static/js/alert.js">
+ 
+</script>
+</body>
+</html>

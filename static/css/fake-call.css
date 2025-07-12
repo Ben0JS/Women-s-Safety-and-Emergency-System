@@ -1,0 +1,36 @@
+    body {
+      background-color: #000;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .caller-info {
+      text-align: center;
+    }
+
+    .caller-name {
+      font-size: 32px;
+      margin-top: 10px;
+    }
+
+    .status {
+      font-size: 18px;
+      color: #0f0;
+      margin-bottom: 40px;
+    }
+
+    .end-call {
+      background-color: red;
+      color: white;
+      font-size: 18px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }

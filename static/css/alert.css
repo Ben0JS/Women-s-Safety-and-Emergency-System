@@ -1,0 +1,97 @@
+ body {
+      background-color: #ffe6e6;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+  .alert-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 40px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+
+#alert-btn {
+  padding: 14px 30px;
+  background-color: #ff0000; /* Red for emergency */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 30px auto 0 auto; /* top | horizontal | bottom */
+  display: block;
+}
+
+
+#alert-btn:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+#alert-btn:active {
+  transform: scale(0.97);
+}
+
+/*back to home*/
+.back-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-link a {
+  text-decoration: none;
+  color: #e91e63;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: 2px solid #e91e63;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link a:hover {
+  background-color: #e91e63;
+  color: white;
+}
+
+#status-message {
+  min-height: 100px;
+  font-size: 18px;
+  margin-top: 20px;
+  white-space: pre-line;
+}
+
+
+     #fake-call-btn {
+    padding: 14px 30px;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 30px;
+  }
+
+  #fake-call-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+  }
+
+  #fake-call-btn:active {
+    transform: scale(0.97);
+  }
+  
+
+  
