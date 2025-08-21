@@ -7,9 +7,11 @@ body {
 }
 
 header {
-  background-color: #ffb6c1;
-  padding: 20px;
+   background: linear-gradient(90deg, #ffb6c1 10%, #ffe6e6 90%);
+  box-shadow: 0 4px 18px #e91e6311;
+  padding : 30px;
   text-align: center;
+  border-bottom: 2.5px solid #e91e6380;
 }
 
 header h1 {

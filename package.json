@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "twilio": "^5.8.0"
+  },
+  "name": "women-s-safety-and-emergency-system",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ben0JS/Women-s-Safety-and-Emergency-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ben0JS/Women-s-Safety-and-Emergency-System/issues"
+  },
+  "homepage": "https://github.com/Ben0JS/Women-s-Safety-and-Emergency-System#readme",
+  "description": ""
+}

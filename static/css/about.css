@@ -1,103 +1,182 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fff0f4;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #fff0f4 60%, #ffe6fa 100%);
   margin: 0;
-  padding: 0px;
-  color: #333;
+  padding: 0;
+  color: #373241;
+  min-height: 100vh;
 }
+
 header {
-  background-color: #ffb6c1;
-  padding: 20px;
+  background: linear-gradient(90deg, #ffb6c1 40%, #fff0f4 100%);
+  padding: 32px 0 18px 0;
   text-align: center;
   border-bottom: 3px solid #e91e63;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.07);
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 2.3rem;
   font-weight: bold;
   margin: 0;
-  color: #333;
+  color: #81153e;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px #fff6, 0 0px 1px #e91e6327;
 }
 
 section {
-  background-color: white;
-  margin: 20px auto;
-  padding: 30px;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin: 34px auto;
+  padding: 36px 40px;
+  max-width: 850px;
+  border-radius: 16px;
+  box-shadow: 0 2px 18px rgba(233, 30, 99, 0.08), 0 1px 2px #fff5;
+  transition: box-shadow 0.25s;
+}
+
+section:hover {
+  box-shadow: 0 4px 24px rgba(233, 30, 99, 0.13), 0 1.5px 2.5px #fff7;
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 1.58rem;
   color: #e91e63;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px #fff6;
 }
 
 p, li {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #554258;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 28px;
 }
 
 li {
   margin-bottom: 10px;
+  position: relative;
+  padding-left: 6px;
 }
-/*key features*/ /*image styles*/
+
+li::before {
+  content: '';
+  display: inline-block;
+  height: 8px; width: 8px;
+  border-radius: 50%;
+  background: #e91e63;
+  position: absolute;
+  left: -16px; top: 12px;
+}
 
 .about-image {
   text-align: center;
-  margin-top: 20px;
+  margin: 30px 0 8px 0;
 }
 
 .about-image img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 340px;
+  width: 84vw;
+  border-radius: 16px;
+  box-shadow: 0 5px 28px rgba(233,30,99,0.09);
+  border: 4px solid #fff0f4;
 }
 
+/* Key Features */
 .feature-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 18px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .feature {
-  background-color: #ffe0ec;
-  padding: 20px;
-  border-radius: 10px;
-  flex: 1 1 250px;
+  background: linear-gradient(110deg, #ffe0ec 80%, #fff0f4 100%);
+  border: 2px solid #ffb6c16e;
+  padding: 22px 18px;
+  border-radius: 12px;
+  min-width: 170px;
+  flex: 1 1 200px;
   text-align: center;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-weight: 600;
+  box-shadow: 0 1.5px 8px rgba(233,30,99,0.07);
+  color: #a40840;
+  font-size: 1rem;
+  transition: transform 0.18s, box-shadow 0.17s, border 0.18s;
 }
 
+.feature:hover {
+  background: linear-gradient(110deg, #ffb3c7 60%, #fff0f4 160%);
+  border: 2px solid #e91e63b0;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 3px 15px rgba(233,30,99,0.11);
+}
 
-/*back to home*/
 .back-link {
   text-align: center;
-  margin-top: 30px;
+  margin: 40px auto 36px auto;
 }
 
 .back-link a {
   text-decoration: none;
   color: #e91e63;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 10px 24px;
   border: 2px solid #e91e63;
-  border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s;
+  border-radius: 24px;
+  background: #fff;
+  transition: background 0.3s, color 0.3s, box-shadow 0.16s;
+  box-shadow: 0 1px 5px #e91e6316;
+  letter-spacing: 1px;
+  position: relative;
 }
 
 .back-link a:hover {
-  background-color: #e91e63;
-  color: white;
+  background: #e91e63;
+  color: #fff;
+  box-shadow: 0 4px 16px #e91e6330;
 }
 
+@media (max-width: 700px) {
+  section {
+    padding: 20px 5vw;
+    max-width: 99vw;
+  }
+  header {
+    font-size: 1.2rem;
+    padding: 22px 0 10px 0;
+  }
+  .about-image img {
+    max-width: 96vw;
+    border-radius: 11px;
+  }
+  .feature-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .feature {
+    min-width: 80vw;
+    font-size: 0.99rem;
+  }
+}
+@media (max-width: 450px) {
+  header h1 {
+    font-size: 1.1rem;
+  }
+  section {
+    padding: 11px 2vw;
+  }
+  .feature {
+    padding: 13px 7px;
+  }
+  .about-image {
+    margin: 15px 0 3px 0;
+  }
+}
 

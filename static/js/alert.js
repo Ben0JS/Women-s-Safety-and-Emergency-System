@@ -20,15 +20,18 @@
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
 
-         status.innerHTML = `
-  <span style="color: green;">✅ Alert Sent!</span><br><br>
-  <span style="color: blue;">📍 <strong>Your Location:</strong></span><br>
-  <span style="color: orange;">Latitude: ${lat}</span><br>
-  <span style="color: purple;">Longitude: ${lon}</span><br><br>
-  <a href="https://www.google.com/maps?q=${lat},${lon}" target="_blank" style="color: red; font-weight: bold;">
-    📌 View on Google Maps
-  </a>
-`;
+     status.innerHTML = `
+    <span class="status-success">✅ Alert Sent!</span><br><br>
+    <span class="status-location-label">📍 <strong>Your Location:</strong></span>
+    <span class="status-latitude">Latitude: ${lat}</span><br>
+    <span class="status-longitude">Longitude: ${lon}</span><br><br>
+    <a href="https://www.google.com/maps?q=${lat},${lon}" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="status-map-link">
+       📌 View on Google Maps
+    </a>
+  `;
         }, function (error) {
           status.textContent = "❌ Location access denied or unavailable.";
         });
