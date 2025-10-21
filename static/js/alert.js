@@ -1,42 +1,48 @@
- document.addEventListener("DOMContentLoaded", function () {
-    const isLoggedIn = localStorage.getItem("loggedIn");
+document.addEventListener('DOMContentLoaded', function () {
+  // If you want, use login check here, else skip
 
-    // 🚫 Redirect to login.html if not logged in
-    if (!isLoggedIn || isLoggedIn !== "true") {
-      alert("You must login first.");
-      window.location.href = "login.html";
-      return;
-    }
+  document.getElementById('alert-btn').addEventListener('click', async function () {
+    const status = document.getElementById('status-message');
+    status.textContent = 'Getting location...';
 
-    // ✅ Handle Alert Button Click
-    document.getElementById("alert-btn").addEventListener("click", function (event) {
-      event.preventDefault();
-
-      const status = document.getElementById("status-message");
-      status.textContent = "Sending alert...";
-
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        async function (position) {
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
 
-     status.innerHTML = `
-    <span class="status-success">✅ Alert Sent!</span><br><br>
-    <span class="status-location-label">📍 <strong>Your Location:</strong></span>
-    <span class="status-latitude">Latitude: ${lat}</span><br>
-    <span class="status-longitude">Longitude: ${lon}</span><br><br>
-    <a href="https://www.google.com/maps?q=${lat},${lon}" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="status-map-link">
-       📌 View on Google Maps
-    </a>
-  `;
-        }, function (error) {
-          status.textContent = "❌ Location access denied or unavailable.";
-        });
-      } else {
-        status.textContent = "❌ Geolocation not supported by your browser.";
-      }
-    });
+          status.innerHTML = `
+            <span class="status-success">✅ Location captured!</span><br><br>
+            <strong>Your Location:</strong><br>
+            Latitude: ${lat}<br>
+            Longitude: ${lon}<br><br>
+            <a href="https://www.google.com/maps?q=${lat},${lon}" target="_blank" rel="noopener noreferrer" class="status-map-link">📌 View on Google Maps</a><br>
+            Sending alert email...
+          `;
+
+          try {
+            const response = await fetch('http://localhost:3000/send-location-alert', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ latitude: lat, longitude: lon }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+              status.innerHTML += `<br><span class="status-success">✅ ${result.message}</span>`;
+            } else {
+              status.innerHTML += `<br>❌ Email error: ${result.error}`;
+            }
+          } catch (error) {
+            status.innerHTML += `<br>❌ Network error: ${error.message}`;
+          }
+        },
+        function (error) {
+          status.textContent = '❌ Location access denied or unavailable.';
+        }
+      );
+    } else {
+      status.textContent = '❌ Geolocation not supported by your browser.';
+    }
   });
+});

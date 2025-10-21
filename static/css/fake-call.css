@@ -25,12 +25,61 @@
       margin-bottom: 40px;
     }
 
-    .end-call {
-      background-color: red;
-      color: white;
-      font-size: 18px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+.end-call {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  /* Increase padding for gap */
+  margin: 10px;
+  /* Make button large enough to fit image and gap */
+  width: 80px;   
+  height: 80px;  
+}
+
+.imgstyle {
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  /* Reduce image size for clean gap */
+  width: 80px;
+  height: 80px;
+  padding: 0px;
+  margin: 0px;
+}
+.end-call1 {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  border-color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin: 10px;
+  width: 80px;   
+  height: 80px;  
+}
+.imgstyle1 {
+  border-radius: 50%;
+  background-color: #ffffff;
+  /* Reduce image size for clean gap */
+  width: 80px;
+  height: 80px;
+  padding: 0px;
+  margin: 0px;
+}
+.imgstyle2 {
+  border-radius: 50%;
+  background-color: rgb(255, 247, 0);
+  /* Reduce image size for clean gap */
+  width: 80px;
+  height: 80px;
+  padding: 0px;
+  margin: 0px;
+}
+.end-call2 {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 10px;
+  width: 80px;   
+  height: 80px;  
+}
